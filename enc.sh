@@ -5,5 +5,4 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-openssl enc -aes-256-cbc -salt -pbkdf2 -in $1 -out $1.enc
-
+openssl enc -aes-256-cbc -salt -pbkdf2 -pass file:$PWD/.pass -in $1 -out $1.enc
